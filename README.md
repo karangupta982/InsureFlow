@@ -1,2 +1,2 @@
 # InsureFlow
-An End to end project with machine learning, mlops
+An End to end project with Machine Learning, MLOPS.
