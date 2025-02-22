@@ -9,7 +9,15 @@ const app = express();
 const mongoDbUrl = process.env.MONGODB_URL;
 
 
-app.use(cors());
+// app.use(cors());
+app.use(cors({
+    origin: 'https://insure-flow-frontend.vercel.app'
+    // origin: 'http://localhost:3000'
+  }));
+  
+
+
+
 app.use(express.json());
 
 app.post('/predict', (req, res) => {
