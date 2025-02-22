@@ -96,6 +96,10 @@ const path = require('path');
 
 const app = express();
 
+
+const mongoDbUrl = process.env.MONGODB_URL;
+
+
 app.use(cors());
 app.use(express.json());
 
