@@ -1,4 +1,3 @@
-# INSUREFLOW/predict.py
 import sys
 import json
 import os
@@ -12,16 +11,16 @@ vehicle_prediction_config = VehiclePredictorConfig()
 
 def predict_from_json(json_string):
     try:
-        # Log current directory and file paths for debugging
+        
         current_dir = os.path.dirname(os.path.abspath(__file__))
         logging.info(f"Current directory: {current_dir}")
         logging.info(f"Pipeline path: {os.path.join(current_dir, 'src', 'pipline', 'prediction_pipeline.py')}")
         
-        # Parse JSON input
+       
         input_data = json.loads(json_string)
         logging.info(f"Received input data: {input_data}")
 
-        # Process and convert input data
+        
         processed_input = {
             "Gender": int(input_data['Gender']),
             "Age": int(input_data['Age']),
@@ -37,10 +36,10 @@ def predict_from_json(json_string):
         }
         logging.info(f"Processed input: {processed_input}")
 
-        # Create VehicleData instance
+        
         vehicle_data = VehicleData(**processed_input)
         
-        # Get DataFrame
+        
         df = vehicle_data.get_vehicle_input_data_frame()
         logging.info(f"Created DataFrame: {df}")
         
@@ -51,7 +50,7 @@ def predict_from_json(json_string):
         prediction = model_predictor.predict(dataframe=df)
         logging.info(f"Prediction result: {prediction}")
         
-        # Return prediction result
+        
         result = {"prediction": int(prediction[0])}
         print(json.dumps(result))
         

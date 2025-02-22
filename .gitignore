@@ -4,6 +4,7 @@ notebook/
 artifact/
 notebook/mongoDB_demo.ipynb
 /template.py
+/template.py
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
