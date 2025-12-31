@@ -1,8 +1,8 @@
 ---
 
-# InsureFlow - MLOps & MERN Stack Project
+# InsureFlow - MLOps
 
-InsureFlow is an end-to-end vehicle insurance prediction system built using MLOps principles and the MERN stack. This project implements a fully automated machine learning pipeline integrated with a modern web interface, enabling users to input vehicle details and get accurate insurance predictions. It also includes a robust CI/CD pipeline for continuous integration and deployment.
+InsureFlow is an end-to-end vehicle insurance prediction system built using MLOps principles. This project implements a fully automated machine learning pipeline integrated with a modern web interface, enabling users to input vehicle details and get accurate insurance predictions. It also includes a robust CI/CD pipeline for continuous integration and deployment.
 
 ---
 
@@ -34,7 +34,7 @@ InsureFlow is an end-to-end vehicle insurance prediction system built using MLOp
 
 InsureFlow is designed to predict vehicle insurance eligibility based on multiple input features using machine learning models. The project follows an MLOps pipeline, covering data ingestion, data validation, data transformation, model training, model evaluation, model pusher, and deployment. The front end allows users to submit their details and view predictions in real-time, while the backend handles data processing and model inference.
 
-This project demonstrates advanced backend complexity through its modular architecture, incorporating data pipelines, machine learning model management, and scalable API endpoints. The backend leverages Python for ML operations and Node.js for web services, ensuring high performance and reliability in a production environment.
+This project demonstrates advanced backend complexity through its modular architecture, incorporating data pipelines, machine learning model management, and scalable API endpoints. The backend leverages Python for ML operations, ensuring high performance and reliability in a production environment.
 
 ---
 
@@ -46,7 +46,7 @@ The architecture of InsureFlow is designed for scalability, modularity, and robu
 
 ```mermaid
 flowchart TD
-    A[User Interface - React.js Frontend] --> B[Express.js Backend API]
+    A[User Interface - React.js Frontend] --> B[Backend API]
     B --> C[MongoDB Atlas Database]
     B --> D[ML Prediction Pipeline]
     D --> E[Data Ingestion Component]
@@ -71,7 +71,6 @@ The backend architecture is highly complex, featuring:
 - **Modular Component Design:** Each ML pipeline stage (ingestion, validation, transformation, training, evaluation, pusher) is implemented as a separate, reusable component with dependency injection and configuration management.
 - **Data Pipeline Orchestration:** Automated workflows manage data flow between components, including error handling, logging, and artifact versioning.
 - **Model Management System:** Implements model versioning, performance tracking, and automated deployment of the best-performing models.
-- **Scalable API Layer:** Express.js server handles concurrent requests, with process spawning for Python ML inference to ensure isolation and performance.
 - **Database Abstraction:** Custom data access layers abstract MongoDB operations, supporting schema validation and efficient querying.
 - **Configuration and Environment Management:** Centralized configuration entities manage hyperparameters, database connections, and deployment settings across environments.
 - **Exception Handling and Logging:** Comprehensive error tracking and logging frameworks ensure reliability and debuggability in production.
@@ -87,19 +86,12 @@ The backend architecture is highly complex, featuring:
 - **Pipeline:** Docker Image, Docker Hub, GitHub Actions, CI/CD
 - **Deployment:** Render, Docker Hub, Vercel
 
-### MERN Stack (Web App)
-- **Frontend:** React.js, Tailwind CSS
-- **Backend:** Node.js, Express.js
-- **Database:** MongoDB Atlas
-- **Deployment:** Vercel (Frontend), Render (Backend)
-
 ---
 
 ## Features
 
 - End-to-End ML Pipeline: Automated pipeline for data processing, model training, evaluation, and deployment, incorporating advanced techniques like feature engineering and hyperparameter tuning.
 - Continuous Integration & Deployment: GitHub Actions trigger the CI/CD pipeline on every push to the main branch, ensuring rapid iteration and quality assurance.
-- MERN Web App: User-friendly interface for inputting vehicle details and receiving insurance predictions, with responsive design and real-time feedback.
 - Dockerized Deployment: Both the app and model are containerized for consistent environments, enabling seamless scaling and portability.
 - Database Integration: MongoDB Atlas for seamless data storage and retrieval, with optimized queries and indexing for performance.
 - Model Management: Only the best-performing model is stored and used for prediction, with automated model selection based on evaluation metrics.
